@@ -1,12 +1,12 @@
 .card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
   padding: 1rem;
   overflow: hidden;
-  background:blanchedalmond
 }
 
 .card.user-item__content {
-  background: #ff6f61;
+  background: linear-gradient(135deg,#ffefeb,#fff6f4);
   padding: 1rem;
 }

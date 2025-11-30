@@ -1,0 +1,52 @@
+:root{
+  --accent: #fcbf1e;
+  --primary-dark: #4f005f;
+  --primary: #741188;
+}
+
+.main-header {
+  width: 100%;
+  height: 4.5rem;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 6px 18px rgba(23, 0, 46, 0.25);
+  z-index: 50;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+.main-header__title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.main-header__title a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-header__title a:hover,
+.main-header__title a:active {
+  color: var(--accent);
+}
+
+.main-header__nav {
+  margin-left: auto;
+}
+.main-header__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+  
