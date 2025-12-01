@@ -1,159 +1,116 @@
-/* Main navigation styles - modernized */
-.main-navigation {
+/* Main Header Styles */
+.main-header {
+  width: 100%;
+  height: 60px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-right: 1rem;
-}
-
-.main-navigation__menu-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.main-navigation__menu-btn span {
-  display: block;
-  width: 22px;
-  height: 3px;
-  margin: 3px 0;
-  background: rgba(255,255,255,0.95);
-  border-radius: 2px;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.main-navigation__menu-btn:hover span,
-.main-navigation__menu-btn:focus span{
-  background: var(--accent);
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .main-navigation__title {
   margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .main-navigation__title a {
   color: white;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.main-navigation__nav {
-  margin-left: auto;
+.main-navigation__title a:hover {
+  opacity: 0.9;
 }
 
-.main-navigation__nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.main-navigation__nav li {
-  margin: 0 0.5rem;
-}
-
-.main-navigation__nav a {
-  text-decoration: none;
-  color: white;
-  padding: 0.45rem 0.7rem;
-  border-radius: 6px;
-  transition: background 0.15s, color 0.15s;
-  font-weight: 600;
-}
-
-.main-navigation__nav a:hover,
-.main-navigation__nav a:active {
-  color: #2b0530;
-  background: var(--accent);
-}
-
-@media (min-width: 768px) {
-  .main-navigation__menu-btn {
-    display: none;
-  }
-}
-
-.main-navigation__nav {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .main-navigation__nav {
-    display: block;
-  }
-}
-.main-navigation {
-  height: 3rem;
-  width: 3rem;
-  background: #4f005f;
+/* Menu Button */
+.main-navigation__menu-btn {
+  background: transparent;
   border: none;
+  cursor: pointer;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
-    justify-content: space-around;
-    margin-right: 2rem;
-    cursor: pointer;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
 }
 
 .main-navigation__menu-btn span {
   display: block;
-  width: 3rem;
-  height: 2.5rem;
+  width: 100%;
+  height: 3px;
   background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .main-navigation__menu-btn:hover span {
-  background: #fcbf1e;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .main-navigation__menu-btn:focus {
   outline: none;
 }
 
-.main-navigation__menu-btn:focus span {
-  background: #fcbf1e;
-}
-
-.main-navigation__nav {
+/* Navigation Links */
+.main-navigation__header-nav {
   margin-left: auto;
 }
 
-.main-navigation__nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-
-  .main-navigation__nav li {
-    margin: 0 1rem;
-  }
-
-    .main-navigation__nav a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .main-navigation__nav a:hover,
-    .main-navigation__nav a:active {
-      color: #fcbf1e;
-    }
-
-@media (min-width: 768px) {
-    .main-navigation__menu-btn {
-        display: none;
-    }
-    }
-
-.main-navigation__nav {
-    display: none;
+.main-navigation__header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
+
+.main-navigation__header-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.main-navigation__header-nav a:hover,
+.main-navigation__header-nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Side Drawer */
+.side-drawer {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.26);
+  z-index: 100;
+}
+
+.main-navigation__drawer-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 4rem 0 1rem 0;
+}
+
+/* Responsive - Hide header nav on mobile */
+@media (max-width: 768px) {
+  .main-navigation__header-nav {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
-    .main-navigation__nav {
-        display: block;
-    }
+  .main-navigation__menu-btn {
+    display: none;
+  }
 }
    

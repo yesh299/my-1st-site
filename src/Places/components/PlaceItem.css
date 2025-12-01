@@ -1,0 +1,110 @@
+.place-item {
+    list-style: none;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.place-item__content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.place-item__image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+    margin: 0;
+}
+
+.place-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.place-item:hover .place-item__image img {
+    transform: scale(1.05);
+}
+
+.place-item__info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.place-item__info h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+}
+
+.place-item__info h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.place-item__info p {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.place-item__actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.place-item__actions button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.place-item__actions button:nth-child(1) {
+    background: #667eea;
+    color: white;
+}
+
+.place-item__actions button:nth-child(1):hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.place-item__actions button:nth-child(2) {
+    background: #764ba2;
+    color: white;
+}
+
+.place-item__actions button:nth-child(2):hover {
+    background: #623a81;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+}
+
+.place-item__actions button:nth-child(3) {
+    background: #f56565;
+    color: white;
+}
+
+.place-item__actions button:nth-child(3):hover {
+    background: #e53e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 101, 101, 0.4);
+}

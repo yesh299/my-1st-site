@@ -1,0 +1,17 @@
+.place-list {
+    list-style: none;
+    margin: 2rem auto;
+    padding: 0;
+    width: 90%;
+    max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.place-list.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}

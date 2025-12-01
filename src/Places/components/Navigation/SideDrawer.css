@@ -1,10 +1,30 @@
-.Side-drawer {
+.side-drawer {
     position: fixed;
     width: 70%;
     left: 0;
     top: 0;
     height: 100%;
-    background: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.26);
+    z-index: 100;
+}
+
+.slide-in-left-enter {
+    transform: translateX(-100%);
+}
+.slide-in-left-enter-active {
+    transform: translateX(0);
+    transition: transform 200ms ease-out;
+}
+.slide-in-left-exit {
+    transform: translateX(0);
+}
+.slide-in-left-exit-active {
+    transform: translateX(-100%);
+    transition: transform 200ms ease-out;
+}
+
+/* ensure drawer sits above backdrop */
+.side-drawer {
     z-index: 100;
 }
