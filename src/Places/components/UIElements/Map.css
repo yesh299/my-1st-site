@@ -1,0 +1,28 @@
+/* Simple map container and iframe reset */
+.map {
+  width: 100%;
+  height: 20rem;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map__empty {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .map {
+    height: 25rem;
+  }
+}

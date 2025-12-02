@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
+import { AuthContext } from "../../../context/AuthContext";
 import './NavLinks.css';
 
 const NavLinks = (props) => {
+    const authContext = useContext(AuthContext);
+
     return (
         <ul className="nav-links">
             <li>
@@ -11,16 +14,32 @@ const NavLinks = (props) => {
                     ALL USERS
                 </NavLink>
             </li>
+            {authContext.isAuthenticated && (
+                <>
+                    <li>
+                        <NavLink to={`/${authContext.user?.id}/places`} exact>
+                            MY PLACES
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/places/new">ADD PLACE</NavLink>
+                    </li>
+                </>
+            )}
             <li>
-                <NavLink to="/places" exact>
-                    MY PLACES
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/places/new">ADD PLACE</NavLink>
-            </li>
-            <li>
-                <NavLink to="/auth">AUTHENTICATE</NavLink>
+                {authContext.isAuthenticated ? (
+                    <div className="auth-nav">
+                        <span className="user-name">Welcome, {authContext.user?.name}</span>
+                        <button
+                            className="nav-logout"
+                            onClick={authContext.logout}
+                        >
+                            LOGOUT
+                        </button>
+                    </div>
+                ) : (
+                    <NavLink to="/auth">AUTHENTICATE</NavLink>
+                )}
             </li>
         </ul>
     );

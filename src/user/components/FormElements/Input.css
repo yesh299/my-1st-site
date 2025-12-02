@@ -1,0 +1,61 @@
+
+/* Basic form control layout */
+.form-control {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin: 0.75rem 0;
+}
+
+.form-control label {
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: #222;
+}
+
+/* Inputs and textareas share base styles */
+.form-control input,
+.form-control textarea {
+	font: inherit;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid #cfcfcf;
+	border-radius: 6px;
+	background: #fff;
+	color: #111;
+	transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+	border-color: #3b82f6; /* blue-500 */
+	box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+	outline: none;
+}
+
+.form-control textarea {
+	min-height: 6rem;
+	resize: vertical;
+}
+
+/* Error/invalid states */
+.form-control .invalid,
+.form-control input.invalid,
+.form-control textarea.invalid {
+	border-color: #ef4444; /* red-500 */
+}
+
+.form-control .error-text {
+	color: #ef4444;
+	font-size: 0.85rem;
+	margin-top: 0.25rem;
+}
+
+/* Utility: tight inline inputs */
+.form-control.inline {
+	flex-direction: row;
+	align-items: center;
+}
+
+.form-control.inline label {
+	margin-right: 0.5rem;
+}

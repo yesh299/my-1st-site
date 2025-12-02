@@ -1,0 +1,169 @@
+.auth-container {
+  max-width: 450px;
+  margin: 3rem auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.auth-card {
+  width: 100%;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.auth-error {
+  background: #fee;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #c53030;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.auth-warning {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #f59e0b;
+  border: 1px solid #fcd34d;
+}
+
+.auth-warning h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.auth-warning p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #78350f;
+}
+
+.auth-warning-hint {
+  font-style: italic;
+  margin-top: 0.75rem !important;
+  color: #92400e;
+}
+
+.auth-warning .btn--switch {
+  margin-top: 1rem;
+  background: #f59e0b;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.auth-warning .btn--switch:hover {
+  background: #d97706;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.auth-warning .btn--switch:active {
+  transform: translateY(1px);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form .form-control {
+  margin: 0;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.auth-actions .btn {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+.auth-toggle {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.auth-toggle p {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.auth-toggle .btn--toggle {
+  background: none;
+  color: #3b82f6;
+  font-weight: 600;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 120ms ease;
+}
+
+.auth-toggle .btn--toggle:hover {
+  color: #2563eb;
+  box-shadow: none;
+}
+
+.auth-toggle .btn--toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .auth-container {
+    padding: 0.5rem;
+    margin: 2rem auto;
+  }
+
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .auth-form {
+    gap: 1rem;
+  }
+
+  .auth-actions .btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+}

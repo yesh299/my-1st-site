@@ -8,6 +8,7 @@
     backdrop-filter: blur(4px);
     z-index: 50;
     opacity: 0;
+    pointer-events: auto;
     animation: fadeInBackdrop 300ms forwards;
 }
 

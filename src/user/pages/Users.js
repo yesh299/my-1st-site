@@ -1,8 +1,9 @@
 import React from "react";
 
 import UsersList from "../components/UserList";
+import PlaceList from "../../Places/components/PlacesList";
 
-const Users = () => {
+const Users = (props) => {
   const USERS = [
     {
       id: "u1",
@@ -13,7 +14,17 @@ const Users = () => {
     },
   ];
 
-  return <UsersList items={USERS} />;       
+  return (
+    <>
+      <UsersList items={USERS} places={props.items} onDeletePlace={props.onDeletePlace} />
+      {props.items && props.items.length > 0 && (
+        <>
+          <h2 style={{ textAlign: "center", marginTop: "2rem" }}>All Places</h2>
+          <PlaceList items={props.items} onDeletePlace={props.onDeletePlace} />
+        </>
+      )}
+    </>
+  );       
 };
 
 export default Users;
