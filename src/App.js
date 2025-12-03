@@ -13,6 +13,7 @@ import Auth from "./user/pages/Auth";
 import MainNavigation from "./Places/components/Navigation/MainNavigation";
 import EditPlace from "./Places/pages/EditPlace";
 import { AuthProvider } from "./context/AuthContext";
+import Toast from "./components/Toast";
 
 const DUMMY_PLACES = [
   {
@@ -58,23 +59,32 @@ const DUMMY_PLACES = [
 
 const App = () => {
   const [places, setPlaces] = useState(DUMMY_PLACES);
+  // toast state (simple global toast)
+  const [toastMessage, setToastMessage] = useState("");
+  const clearToast = () => setToastMessage("");
 
   const addPlaceHandler = (placeData) => {
     setPlaces((prev) => [placeData, ...prev]);
+    setToastMessage("Place added");
   };
 
   const updatePlaceHandler = (placeId, updatedData) => {
     setPlaces((prev) => prev.map((p) => (p.id === placeId ? { ...p, ...updatedData } : p)));
+    setToastMessage("Place updated");
   };
 
   const deletePlaceHandler = (placeId) => {
     setPlaces((prev) => prev.filter((p) => p.id !== placeId));
+    setToastMessage("Place deleted");
   };
+
+  
 
   return (
     <AuthProvider>
       <Router>
         <MainNavigation />
+        <Toast message={toastMessage} onClose={clearToast} />
         <main style={{ marginTop: "4.5rem" }}>
           <div style={{ width: "90%", maxWidth: 1100, margin: "0 auto", padding: "2rem 0" }}>
             <Switch>

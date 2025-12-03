@@ -1,0 +1,28 @@
+.toast {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 200;
+  min-width: 180px;
+}
+
+.toast__message {
+  font-size: 0.95rem;
+}
+
+.toast__close {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}

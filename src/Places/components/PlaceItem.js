@@ -17,6 +17,11 @@ const PlaceItem = (props) => {
 
   const confirmDeleteHandler = () => {
     if (window.confirm("Are you sure you want to delete this place?")) {
+     
+      try {
+        console.log('[PlaceItem] delete requested for id=', props.id, 'onDelete exists=', !!props.onDelete);
+      } catch (err) {
+      }
       props.onDelete && props.onDelete(props.id);
     }
   };
@@ -51,7 +56,8 @@ const PlaceItem = (props) => {
 
       <li className="place-item">
         <Card className="place-item__content">
-          <div className="place-item__image">
+          <div className="place-item__main">
+            <div className="place-item__image">
             <img
               src={props.image}
               alt={props.title}
@@ -59,25 +65,21 @@ const PlaceItem = (props) => {
               style={{ cursor: "pointer" }}
               title="Click to view full image"
             />
-          </div>
-          <div className="place-item__info">
+            </div>
+            <div className="place-item__info">
             <h2>{props.title}</h2>
             <h3>{props.address}</h3>
             <p>{props.description}</p>
+            </div>
           </div>
           <div className="place-item__actions">
-            <Button inverse onClick={openMapHandler}>
+            <Button size="small" inverse onClick={openMapHandler} aria-label={`View ${props.title} on map`} title="View on map">
               VIEW ON MAP
             </Button>
-            <Button 
-              to={`/places/${props.id}`}
-            >
+            <Button size="small" to={`/places/${props.id}`} aria-label={`Edit ${props.title}`} title="Edit place">
               EDIT
             </Button>
-            <Button 
-              danger 
-              onClick={confirmDeleteHandler}
-            >
+            <Button size="small" danger onClick={confirmDeleteHandler} disabled={!props.onDelete} aria-label={`Delete ${props.title}`} title={props.onDelete ? "Delete place" : "Delete disabled"}>
               DELETE
             </Button>
           </div>

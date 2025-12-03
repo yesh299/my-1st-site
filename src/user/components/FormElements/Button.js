@@ -4,36 +4,38 @@ import { Link } from "react-router-dom";
 import "./Button.css";
 
 const Button = (props) => {
-  const className = `button button--${props.size || "default"} ${
-    props.inverse ? "button--inverse" : ""
-  } ${props.danger ? "button--danger" : ""} ${props.disabled ? "button--disabled" : ""}`;
+  const { to, href, exact, target, rel, size, inverse, danger, disabled, type, onClick, className: extraClass, ...rest } = props;
 
-  if (props.href) {
+  const className = `button button--${size || "default"} ${inverse ? "button--inverse" : ""} ${
+    danger ? "button--danger" : ""
+  } ${disabled ? "button--disabled" : ""} ${extraClass || ""}`.trim();
+
+  if (href) {
     return (
-      <a href={props.href} className={className} target={props.target} rel={props.rel}>
+      <a href={href} className={className} target={target} rel={rel} {...rest}>
         {props.children}
       </a>
     );
   }
 
-  if (props.to && !props.disabled) {
+  if (to && !disabled) {
     return (
-      <Link to={props.to} exact={props.exact} className={className}>
+      <Link to={to} exact={exact} className={className} {...rest}>
         {props.children}
       </Link>
     );
   }
 
-  if (props.to && props.disabled) {
+  if (to && disabled) {
     return (
-      <button type="button" className={className} disabled onClick={(e) => e.preventDefault()}>
+      <button type="button" className={className} disabled onClick={(e) => e.preventDefault()} {...rest}>
         {props.children}
       </button>
     );
   }
 
   return (
-    <button type={props.type || "button"} className={className} onClick={props.onClick} disabled={props.disabled}>
+    <button type={type || "button"} className={className} onClick={onClick} disabled={disabled} {...rest}>
       {props.children}
     </button>
   );
